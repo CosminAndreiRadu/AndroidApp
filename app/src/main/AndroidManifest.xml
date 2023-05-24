@@ -13,6 +13,25 @@
         android:theme="@style/Theme.AndroidApp"
         tools:targetApi="31">
         <activity
+            android:name=".Settings"
+            android:exported="false" />
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
+            android:name=".Feed"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.AndroidApp" />
+        <activity
+            android:name=".HomeActiviry"
+            android:exported="false"
+            android:label="@string/title_activity_home_activiry"
+            android:theme="@style/Theme.AndroidApp" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
