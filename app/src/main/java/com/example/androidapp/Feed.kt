@@ -1,13 +1,29 @@
 package com.example.androidapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
+import android.widget.Button
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
 import com.example.androidapp.databinding.ActivityFeedBinding
-import com.example.androidapp.databinding.ActivityMainBinding
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 
 class Feed : AppCompatActivity() {
     private lateinit var binding: ActivityFeedBinding
+    lateinit var getPictureButton: Button
+    private lateinit var shareButton: Button
+    lateinit var gImageView: ImageView
+    private var pickImage = 100
+    private var imageUri: Uri? = null
+    private var tempUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,5 +75,48 @@ class Feed : AppCompatActivity() {
 
 
         }
+
+
+
+        gImageView = findViewById(R.id.gImageView)
+
+
+
+        getPictureButton = findViewById(R.id.getPictureButton)
+
+        shareButton = findViewById(R.id.shareButton)
+
+        shareButton.setOnClickListener {
+
+            val intent =  Intent(Intent.ACTION_SEND)
+            intent.type = "image/*"
+            intent.putExtra("Share image", tempUri)
+
+            val chooser = Intent.createChooser(intent, "Share using...")
+            startActivity(chooser)
+        }
+
+
+        getPictureButton.setOnClickListener {
+
+            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+            startActivityForResult(gallery, pickImage)
+
+
+        }
     }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == RESULT_OK && requestCode == pickImage) {
+            imageUri = data?.data
+            tempUri = imageUri
+            gImageView.setImageURI(imageUri)
+
+        }
+    }
+
+
+
+
+
 }
