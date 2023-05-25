@@ -90,7 +90,7 @@ class Feed : AppCompatActivity() {
 
             val intent =  Intent(Intent.ACTION_SEND)
             intent.type = "image/*"
-            intent.putExtra("Share image", tempUri)
+            intent.putExtra(Intent.EXTRA_STREAM, tempUri)
 
             val chooser = Intent.createChooser(intent, "Share using...")
             startActivity(chooser)
