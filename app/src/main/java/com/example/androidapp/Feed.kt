@@ -58,13 +58,13 @@ class Feed : AppCompatActivity() {
 
                 }
 
-                R.id.settings -> {
-
-                    startActivity(Intent(this@Feed, Settings::class.java))
-                    finish()
-                    overridePendingTransition (0, 0)
-
-                }
+//                R.id.settings -> {
+//
+//                    startActivity(Intent(this@Feed, Settings::class.java))
+//                    finish()
+//                    overridePendingTransition (0, 0)
+//
+//                }
 
                 else -> {
 

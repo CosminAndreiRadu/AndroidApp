@@ -71,13 +71,13 @@ class Profile : AppCompatActivity() {
 
                 }
 
-                R.id.settings -> {
-
-                    startActivity(Intent(this@Profile, Settings::class.java))
-                    finish()
-                    overridePendingTransition (0, 0)
-
-                }
+//                R.id.settings -> {
+//
+//                    startActivity(Intent(this@Profile, Settings::class.java))
+//                    finish()
+//                    overridePendingTransition (0, 0)
+//
+//                }
 
                 else -> {
 

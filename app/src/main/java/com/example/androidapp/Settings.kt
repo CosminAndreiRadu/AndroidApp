@@ -45,14 +45,14 @@ class Settings : AppCompatActivity() {
 
                 }
 
-                R.id.settings -> {
-
-                    startActivity(Intent(this@Settings, Settings::class.java))
-                    finish()
-                    overridePendingTransition (0, 0)
-
-
-                }
+//                R.id.settings -> {
+//
+//                    startActivity(Intent(this@Settings, Settings::class.java))
+//                    finish()
+//                    overridePendingTransition (0, 0)
+//
+//
+//                }
                 else -> {
 
                 }

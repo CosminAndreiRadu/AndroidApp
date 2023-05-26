@@ -53,14 +53,14 @@ class Home : AppCompatActivity() {
                     overridePendingTransition (0, 0)
 
                 }
-
-                R.id.settings -> {
-
-                    startActivity(Intent(this@Home, Settings::class.java))
-                    finish()
-                    overridePendingTransition (0, 0)
-
-                }
+//
+//                R.id.settings -> {
+//
+//                    startActivity(Intent(this@Home, Settings::class.java))
+//                    finish()
+//                    overridePendingTransition (0, 0)
+//
+//                }
                 else -> {
 
                 }
